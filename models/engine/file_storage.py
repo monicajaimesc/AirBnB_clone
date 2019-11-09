@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Declarates FileStorage class
 """
