@@ -3,6 +3,7 @@
 Module containing BaseModel class
 """
 import uuid
+from . import storage
 from datetime import datetime
 
 
@@ -34,6 +35,7 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """
@@ -53,6 +55,7 @@ class BaseModel():
         datetime
         """
         setattr(self, 'updated_at', datetime.now())
+        storage.save()
 
     def to_dict(self):
         """
@@ -65,7 +68,14 @@ class BaseModel():
         Returns:
             (dict): dictionary with all instance attributes
         """
-        self.__dict__['updated_at'] = self.updated_at.isoformat()
-        self.__dict__['created_at'] = self.created_at.isoformat()
-        self.__dict__['__class__'] = self.__class__.__name__
-        return self.__dict__
+
+        # A copy was needed because we were not able to use storage.save()
+        # This was due to __dict__ being edited by adding it __class__ key,
+        # Also we were editing the value of updated_at and created_at keys
+        # so when we were going to dump the obj it has a datetime obj as
+        # value on updated_at key
+        new_dict = self.__dict__.copy()
+        new_dict['updated_at'] = self.updated_at.isoformat()
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['__class__'] = self.__class__.__name__
+        return new_dict
