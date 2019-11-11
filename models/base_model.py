@@ -3,7 +3,6 @@
 Module containing BaseModel class
 """
 from datetime import datetime
-from models import storage
 from uuid import uuid4
 
 
@@ -25,7 +24,6 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
         else:
             for key, value in kwargs.items():
                 if key == "update_at":
