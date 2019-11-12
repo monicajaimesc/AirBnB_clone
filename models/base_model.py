@@ -22,7 +22,7 @@ class BaseModel:
         Method call when the instance is created
         Sets all atributes. Created_at and updated_at are datetime objs
         """
-        if kwargs: 
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "updated_at":
                     self.updated_at = datetime.strptime(
