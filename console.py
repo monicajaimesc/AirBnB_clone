@@ -16,6 +16,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = ("(hbnb) ")
 
+
     def emptyline(self):
         """
         empty line + ENTER shouldn’t 
@@ -61,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
     
-        if len(args) == 0:
+        else:
             print("** class doesn't exist **")
         
         elif len(args) < 2:
