@@ -5,7 +5,8 @@ Implementing the consola
 
 import cmd
 import json
-# from models.base_model import BaseModel
+from models.base_model import BaseModel
+import models
 # base = {'BaseModel': Basemodel}
 
 class HBNBCommand(cmd.Cmd):
@@ -33,34 +34,42 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
     
-    def do_create(self, *args):
+    def do_create(self, args):
         """
         Creates a new instance of BaseModel, saves it (to the JSON file)
         """
-        print(args[0])
+
         if len(args) == 0:
             print("** class name missing **")
             return
         try:
-            args = split(args)
+            args = args.split()
             new_instance = eval(args[0])()
             new_instance.save()
             print(new_instance.id)
         
         except:
             print("** class doesn't exist **")
-        
-    def do_show(self, *args)
+   
+    def do_show(self, args):
         """
-        Prints the string representation 
-        of an instance based on the class name and id
-        """
-        args = split(args)
+        Prints the string representation
+        """ 
+        #of an instance based on the class name and id
+    
+        args = args.split()
         if len(args) == 0:
             print("** class name missing **")
-
-        if len(args) == 1:
+    
+        if len(args) == 0:
+            print("** class doesn't exist **")
+        
+        elif len(args) < 2:
             print()
+        
+
+
+
 
 
 if __name__ == "__main__":
