@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Declarates FileStorage class
+Module that containg a FileStorage class
 """
 import json
 import models
