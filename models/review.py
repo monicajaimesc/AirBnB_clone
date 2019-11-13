@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-Module that contains a class 
+Module that contains a class
 Review that inherits from BaseModel
 """
 from models.base_model import BaseModel
-
 
 
 class Review(BaseModel):

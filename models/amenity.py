@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that contains a class 
+Module that contains a class
 Amenity that inherits from BaseModel
 """
 
@@ -11,7 +11,7 @@ class Amenity(BaseModel):
     """
     class Amenity that containts the attributes listed
     below
-    
+
     Atributes:
     name: string - empty string
     """
