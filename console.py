@@ -57,27 +57,26 @@ class HBNBCommand(cmd.Cmd):
 
 	def do_show(self, args):
 		"""
-		Prints the string representation of 
-  		an instance based on the class name and id.
+		Prints the string representation of an instance 
+  		based on the class name and id. 
+    	
+     	Ex: $ show BaseModel 1234-1234-1234.
 		"""
 
-		#of an instance based on the class name and id	
+		# tokenize args	
 		args = shlex.split(args)
-		# If the class name is missing  ** (ex: $ show)
+		# If the class name is missing or empty ** (ex: $ show)
 		if len(args) == 0 or args[0] =="":
 			print("** class name missing **")
-			# If the class name doesn’t exist ** (ex: $ show MyModel)
+		# If the class name doesn’t exist ** (ex: $ show MyModel)
 		else:
 			if args[0] in models.classes.keys():
 				# [MyModel, ID]
-				if len(args) >= 2:
+				if len(args) > 1:
 					# all return all the object
-					for key in models.storage.all().keys():
-						# classname.id
-						if key.split(".")[1] == args[1]:
-							obj = all_objs[obj_id]
-							print(obj)
-							break
+					key = args[0] + "." + args[1]
+					if key in models.storage.all():
+						print(models.storage.all()[key])
 					else:
 						# print, (ex: $ show BaseModel 121212)
 						print("** no instance found **")
@@ -99,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
 			# check if class exists
 			if args[0] in models.classes.keys():
 				# check if id was passed
-				if len(args) >= 2:
+				if len(args) > 1:
 					for key in models.storage.all().keys():
 						id_object = key.split('.')[1]
 						if args[1] == id_object:
@@ -138,7 +137,7 @@ class HBNBCommand(cmd.Cmd):
 			# print $ all BaseMode form
 			print(list_string_name)
 
-		elif args[0] not in models.classes.keys(:
+		elif args[0] not in models.classes.keys():
 			print("** class doesn't exist **")
 
 	def do_update(self, args):
