@@ -124,13 +124,12 @@ class HBNBCommand(cmd.Cmd):
 			obj_dict = models.storage.all()
 		if len(args) >= 2:
 			obj_dict = models.storage.all(classes[args[0]])
+			for key, value in models.storage.all().items():
+				object_list.append(value.__str__())
+				print(object_list)
 
 		else:
 			print("** class doesn't exist **")
-			return False
-		for key, value in models.storage.all().items():
-			if key.split('.')[0] == args:
-				print([str(obj_dict[key])])
 
 			
 		
