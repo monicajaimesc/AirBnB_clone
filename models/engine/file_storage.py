@@ -4,6 +4,7 @@ Module that containg a FileStorage class
 """
 import json
 import models
+from models.user import User
 
 
 class FileStorage:
@@ -44,7 +45,9 @@ class FileStorage:
 		"""
 		Saves to a file the JSON representation of __objects dictionary
 		"""
+		# open the file json and write it
 		with open(self.__file_path, 'w', encoding="utf-8") as file:
+			# create a new dictionary with the to_dict() method of the value (objects)
 			dic_objects = {key:value.to_dict() for key, value in self.__objects.items()}
 			json.dump(dic_objects, file, indent="\t")
 
