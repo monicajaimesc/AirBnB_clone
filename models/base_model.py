@@ -3,10 +3,11 @@
 Module containing BaseModel class
 """
 import uuid
+import models
 from datetime import datetime
 
 
-class BaseModel():
+class BaseModel:
     """
     Defines all common attributes/methods for other classes. Parent class
 
@@ -16,13 +17,26 @@ class BaseModel():
         updated_at (Date): current datetime when an instance is updated
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
-        Method call when an instance is created
+        Method call when the instance is created
+        Sets all atributes. Created_at and updated_at are datetime objs
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "updated_at":
+                    self.updated_at = datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f")
+                elif key == "created_at":
+                    self.created_at = datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f")
+                elif key != "__class__":
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -42,6 +56,8 @@ class BaseModel():
         datetime
         """
         setattr(self, 'updated_at', datetime.now())
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -54,7 +70,14 @@ class BaseModel():
         Returns:
             (dict): dictionary with all instance attributes
         """
-        self.__dict__['updated_at'] = self.updated_at.isoformat()
-        self.__dict__['created_at'] = self.created_at.isoformat()
-        self.__dict__['__class__'] = self.__class__.__name__
-        return self.__dict__
+
+        # A copy was needed because we were not able to use storage.save()
+        # This was due to __dict__ being edited by adding it __class__ key,
+        # Also we were editing the value of updated_at and created_at keys
+        # so when we were going to dump the obj it has a datetime obj as
+        # value on updated_at key
+        new_dict = self.__dict__.copy()
+        new_dict['updated_at'] = self.updated_at.isoformat()
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['__class__'] = self.__class__.__name__
+        return new_dict
