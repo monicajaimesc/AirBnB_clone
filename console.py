@@ -51,7 +51,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             # args = [BaseModel]
             if args[0] in models.classes.keys():
-                new_instance = eval(args[0])()
+                class_to_instance = models.classes[args[0]]
+                new_instance = class_to_instance()
                 new_instance.save()
                 print(new_instance.id)
             else:
