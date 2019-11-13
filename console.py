@@ -5,6 +5,7 @@ Implementing the consola
 
 import cmd
 import json
+from models.user import User
 from models.base_model import BaseModel
 import models
 import shlex
@@ -91,6 +92,7 @@ class HBNBCommand(cmd.Cmd):
 		(save the change into the JSON file).
 		"""
 		
+		# tokenize args
 		args = args.split()
 		if len(args) == 0:
 			print('** class name missing **')
