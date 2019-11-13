@@ -55,7 +55,8 @@ class HBNBCommand(cmd.Cmd):
 
 	def do_show(self, args):
 		"""
-		Prints the string representation
+		Prints the string representation of 
+  		an instance based on the class name and id.
 		"""
 
 		#of an instance based on the class name and id	
@@ -109,6 +110,28 @@ class HBNBCommand(cmd.Cmd):
 					print('** instance id missing **')
 			else:
 				print("** class doesn't exist **")
+
+	def do_all(self, args):
+		"""
+     	Prints all string representation of all 
+     	instances based or not on the class name
+    	"""
+		
+		args = args.split()
+		# object list of strings
+		object_list = []
+		if len(args) == 0: 
+			obj_dict = models.storage.all()
+		if len(args) >= 2:
+			obj_dict = models.storage.all(classes[args[0]])
+
+		else:
+			print("** class doesn't exist **")
+			return False
+		for key, value in models.storage.all().items():
+			if key.split('.')[0] == args:
+				print([str(obj_dict[key])])
+
 			
 		
 		
