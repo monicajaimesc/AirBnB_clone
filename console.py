@@ -62,9 +62,9 @@ class HBNBCommand(cmd.Cmd):
 		"""
 
 		#of an instance based on the class name and id	
-		args = args.split()
+		args = shlex.split(args)
 		# If the class name is missing  ** (ex: $ show)
-		if len(args) == 0:
+		if len(args) == 0 or args[0] =="":
 			print("** class name missing **")
 			# If the class name doesn’t exist ** (ex: $ show MyModel)
 		else:
@@ -112,6 +112,34 @@ class HBNBCommand(cmd.Cmd):
 					print('** instance id missing **')
 			else:
 				print("** class doesn't exist **")
+    
+    
+	def do_all(self, args):
+		"""
+		Prints all string representation of all 
+		instances based or not on the class name
+
+		Ex: $ all BaseModel or $ all
+		"""
+
+		args = shlex.split(args)
+		# no matter class name is missing, storage it
+		if len(args) == 0:
+			objects = models.storage.all()
+			# Create a new string object from the given object
+			list_string = [str(objects[obj]) for obj in objects]
+			# print list_string $all form
+			print(list_string)
+
+		# stoage when a class name exists
+		elif len(args) > 0 and args[0] in models.classes.keys():
+			objects2 = models.storage.all()
+			list_string_name = [str(objects2[obj]) for obj in objects2 if args[0] in obj]
+			# print $ all BaseMode form
+			print(list_string_name)
+
+		elif args[0] not in models.classes.keys(:
+			print("** class doesn't exist **")
 
 	def do_update(self, args):
 		"""
@@ -161,26 +189,7 @@ class HBNBCommand(cmd.Cmd):
 			else:
 				print("** class doesn't exist **")
 
-	def do_all(self, args):
-		"""
-     	Prints all string representation of all 
-     	instances based or not on the class name
-    	"""
-		
-		args = args.split()
-		# object list of strings
-		object_list = []
-		if len(args) == 0: 
-			obj_dict = models.storage.all()
-		if len(args) >= 2:
-			obj_dict = models.storage.all(classes[args[0]])
-			for key, value in models.storage.all().items():
-				object_list.append(value.__str__())
-				print(object_list)
-
-		else:
-			print("** class doesn't exist **")
-
+	
 			
 		
 		
