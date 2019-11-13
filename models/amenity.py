@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that contains a class
+Module witch contains a class
 Amenity that inherits from BaseModel
 """
 
