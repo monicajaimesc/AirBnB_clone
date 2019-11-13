@@ -5,10 +5,16 @@ Implementing the consola
 
 import cmd
 import json
-from models.user import User
 from models.base_model import BaseModel
 import models
 import shlex
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 # base = {'BaseModel': Basemodel}
 
@@ -82,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
 						# print, (ex: $ show BaseModel 121212)
 						print("** no instance found **")
 				else:
-					print("print ** instance id missing **")
+					print("** instance id missing **")
 			else:
 				print("** class doesn't exist **")
 			
