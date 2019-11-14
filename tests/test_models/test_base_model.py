@@ -92,7 +92,7 @@ class TestBaseModel(unittest.TestCase):
         
     def test_requeriments(self):
         """
-        see if all requeriments asked exist
+        check if  all requeriments asked exist
         """
         self.assertTrue(hasattr(BaseModel, "__str__"))
         self.assertTrue(hasattr(BaseModel, "save"))
