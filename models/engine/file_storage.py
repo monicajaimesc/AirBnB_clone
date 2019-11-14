@@ -61,6 +61,7 @@ class FileStorage:
             with open(self.__file_path, 'r', encoding="utf-8") as file:
                 json_objects = json.load(file)
                 for key, value in json_objects.items():
-                    self.__objects[key] = models.BaseModel(**value)
+                    class_name = key.split('.')[0]
+                    self.__objects[key] = models.classes[class_name](**value)
         except Exception:
             pass
