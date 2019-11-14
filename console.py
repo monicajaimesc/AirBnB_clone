@@ -179,7 +179,7 @@ class HBNBCommand(cmd.Cmd):
                     print('** value missing **')
                 elif len(args) >= 4:
                     # check if istance exists
-                    key_requested = args[0] + '.' + args [1]
+                    key_requested = args[0] + '.' + args[1]
                     for key, value in models.storage.all().items():
                         if key_requested == key:
                             instance = value
