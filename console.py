@@ -200,6 +200,17 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** class doesn't exist **")
 
+    def default(self, args):
+        """ Default to be executed """
+        args_list = args.split('.')
+        objects = models.storage.all()
+        try:
+            if args_list[1] == 'all()':
+                self.do_all(args_list[0])
+        except IndexError:
+            pass
+
+
 if __name__ == "__main__":
     '''
         Entry point for the loop.
