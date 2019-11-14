@@ -6,8 +6,9 @@ import pep8
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.engine.file_storage import FileStorage
 
-class TestFileStorage(unittest.TestCase):
+class file_Storage(unittest.TestCase):
     """Test for FileStorage"""
 
     @classmethod
@@ -31,13 +32,13 @@ class TestFileStorage(unittest.TestCase):
         """
         del cls.user
     
-    def test_pep8_conformance_model(self):
+    def test_pep8(self):
         """
         Test that we conform to PEP8.
         """
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/rectangle.py'])
-        self.assertEqual(result.total_errors, 0, "Fix pep8")
+        result = pep8style.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(result.total_errors, 0, "error pep8")
 
     def test_requeriments(self):
         """
@@ -57,3 +58,31 @@ class TestFileStorage(unittest.TestCase):
         # All your functions (inside and outside a class)
         # should have a documentation
         self.assertTrue(BaseModel.to_dict.__doc__)
+        
+    def test_all_method(self):
+        """
+        Tests that all gives the dict __object method
+        """
+        instances = self.stored.all()
+        self.assertIsNotNone(instances)
+        self.assertIsInstance(instances, dict)
+        self.assertIs(instances, self.stored._FileStorage__objects)
+    
+    def test_new_method(self):
+        """Tests that new sets a new object in __objects"""
+        instances = self.stored.all()
+        key = self.user.__class__.__name__ + "." + str(self.user.id)
+        self.assertIsInstance(self.user, User)
+        self.assertIsNotNone(instances[key])
+    
+    def reload_method(self):
+        """Tests that reload deserializes the __objects from the JSON file"""
+        my_us = User()
+        my_us.name = "bonito pony"
+        my_us.save()
+        storage.save()
+        storage.reload()
+        storager = storage.all()
+        self.assertIsNot(my_us, storager.values())
+
+    
