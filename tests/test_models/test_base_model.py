@@ -5,6 +5,7 @@ It checks for a specific response to a particular set of inputs.
 import unittest
 from models.base_model import BaseModel
 from datetime import datetime
+import pep8
 
 
 class TestBaseModel(unittest.TestCase):
@@ -38,7 +39,7 @@ class TestBaseModel(unittest.TestCase):
         Test that we conform to PEP8.
         """
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/rectangle.py'])
+        result = pep8style.check_files(['models/base_model.py'])
         self.assertEqual(result.total_errors, 0, "Fix pep8")
 
     def test_docs(self):
