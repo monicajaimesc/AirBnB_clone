@@ -30,7 +30,16 @@ class TestBaseModel(unittest.TestCase):
         class method called after tests in an individual class have run
         Tears down the instances
         """
-        pass
+        del cls.base1
+        del cls.base2
+    
+    def test_pep8_conformance_model(self):
+        """
+        Test that we conform to PEP8.
+        """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0, "Fix pep8")
 
     def test_docs(self):
         """Documentation of everithing"""
@@ -80,6 +89,14 @@ class TestBaseModel(unittest.TestCase):
         # isinstance(a, b)
         self.assertIsInstance(base1_dict["created_at"], str)
         self.assertIsInstance(base1_dict["updated_at"], str)
+        
+    def test_requeriments(self):
+        """
+        see if all requeriments asked exist
+        """
+        self.assertTrue(hasattr(BaseModel, "__str__"))
+        self.assertTrue(hasattr(BaseModel, "save"))
+        self.assertTrue(hasattr(BaseModel, "to_dict"))
 
 if __name__ == '__main__':
     unittest.main()
