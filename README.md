@@ -21,13 +21,14 @@ To enter the console you just need to type:
 ## Commands Samples
 
 Different classes that can be used with the commands:  
-    - BaseModel  
-    - Amenity  
-    - City  
-    - Place  
-    - Review  
-    - State  
-    - User  
+
+* BaseModel
+* Amenity  
+* City  
+* Place  
+* Review  
+* State  
+* User  
 
 ```python
 (hbnb) create City
