@@ -166,9 +166,9 @@ class HBNBCommand(cmd.Cmd):
                     print('** instance id missing **')
                 elif len(args) == 2:
                     instance_exist = False
+                    key_requested = args[0] + '.' + args[1]
                     for key, value in models.storage.all().items():
-                        id_object = key.split('.')[1]
-                        if args[1] == id_object:
+                        if key_requested == key:
                             instance_exist = True
                             break
                     else:
