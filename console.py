@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
                         # print, (ex: $ show BaseModel 121212)
                         print("** no instance found **")
                 else:
-                    print("print ** instance id missing **")
+                    print("** instance id missing **")
             else:
                 print("** class doesn't exist **")
 
