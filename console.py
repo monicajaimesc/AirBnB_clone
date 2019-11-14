@@ -107,9 +107,9 @@ class HBNBCommand(cmd.Cmd):
             if args[0] in models.classes.keys():
                 # check if id was passed
                 if len(args) > 1:
+                    key_requested = args[0] + '.' + args[1]
                     for key in models.storage.all().keys():
-                        id_object = key.split('.')[1]
-                        if args[1] == id_object:
+                        if key_requested == key:
                             del models.storage.all()[key]
                             models.storage.save()
                             break
