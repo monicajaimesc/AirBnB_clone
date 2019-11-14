@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Unittest for FileStorage class
+"""
+Unittest for FileStorage class
 """
 import unittest
 import pep8
 import json
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
