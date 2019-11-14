@@ -209,7 +209,7 @@ class HBNBCommand(cmd.Cmd):
                 self.do_all(args_list[0])
             elif 'show' in args_list[1]:
                 id = "".join(args_list[1]).split('"')[1]
-                self.do_show(args_list[0]+" "+ id)
+                self.do_show(args_list[0] + " " + id)
             elif 'destroy' in args_list[1]:
                 id = "".join(args_list[1]).split('"')[1]
                 self.do_destroy(args_list[0]+" " + id)
@@ -217,7 +217,8 @@ class HBNBCommand(cmd.Cmd):
                 id = "".join(args_list[1]).split('"')[1]
                 attribute_name = "".join(args_list[1]).split('"')[3]
                 attribute_value = "".join(args_list[1]).split('"')[5]
-                command = " ".join([args_list[0], id, attribute_name, attribute_value])
+                command = " ".join([args_list[0], id, attribute_name,
+                                    attribute_value])
                 self.do_update(command)
         except IndexError:
             pass
