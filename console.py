@@ -210,6 +210,9 @@ class HBNBCommand(cmd.Cmd):
             elif 'show' in args_list[1]:
                 id = "".join(args_list[1]).split('"')[1]
                 self.do_show(args_list[0]+" "+ id)
+            elif 'destroy' in args_list[1]:
+                id = "".join(args_list[1]).split('"')[1]
+                self.do_destroy(args_list[0]+" " + id)
         except IndexError:
             pass
 
