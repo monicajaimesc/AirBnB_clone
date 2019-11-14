@@ -207,6 +207,9 @@ class HBNBCommand(cmd.Cmd):
         try:
             if args_list[1] == 'all()':
                 self.do_all(args_list[0])
+            elif 'show' in args_list[1]:
+                id = "".join(args_list[1]).split('"')[1]
+                self.do_show(args_list[0]+" "+ id)
         except IndexError:
             pass
 
