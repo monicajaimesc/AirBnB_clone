@@ -7,7 +7,7 @@
 HTML is the structure of the page. CSS is the styling of the page, the design.
 ​
 ### Mandatory Tasks
-​
+
 | File | Description |
 | ------ | ------ |
 | [0-index.html](0-index.html) | Write an HTML page that displays a header and a footer. |
