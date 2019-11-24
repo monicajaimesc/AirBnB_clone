@@ -4,6 +4,9 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
+    position: relative;
+    align-items: center;
+    display: flex;
 }
 section.filters button {
     front-size: 18px;
@@ -13,8 +16,10 @@ section.filters button {
     width: 20%;
     border: 0px;
     border-radius: 4px;
-    margin-right: 30px;
+    right: 30px;
     opacity: 1;
+    position: absolute;
+    
 }
 
 .container .filters button {
