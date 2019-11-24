@@ -4,43 +4,70 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-    position: relative;
+    justify-content: flex-start;
     align-items: center;
     display: flex;
+    padding: 20px;
 }
 section.filters button {
-    front-size: 18px;
+    font-size: 18px;
     color: #FFFFFF;
     background-color: #FF5A5F;
     height: 48px;
     width: 20%;
     border: 0px;
     border-radius: 4px;
+    margin-left: auto;
     right: 30px;
     opacity: 1;
-    position: absolute;
+    padding: 10px;
+    
 
 }
 
 .container .filters button {
     opacity: 90%;
+    padding: 10px;
+    margin-right: 20px;
+  
 }
 
 .locations .amenities {
     height: 100%;
     width: 25%;
+    display: inline-block;
+    position: relative;
+    
 }
 
 .locations {
     border-right: 1px solid #DDDDDD;
+    padding-left: 20px;
+    width: 25%;
+    height: 100%;
+    float: left;
+    padding: 10px;
 }
 
-.locations .amenities h3 {
-    font-weight: 600;
-}
-
-.location .amenities h4 {
+.amenities {
     font-weight: 400;
-    font-size: 14px;
+    line-height: 5px;
+    height: 100%;
+    width: 25%;
+    float: left;
+    padding: 10px;
+}
+
+h3 {
+    color: black;
+    font-weight: 600;
+    line-height: 10px;
+}
+
+h4 {
+    font-weight: 14px;
+    font-weight: 400;
+    line-break: 10px;
+
 }
 
