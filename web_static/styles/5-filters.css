@@ -7,7 +7,7 @@
     justify-content: flex-start;
     align-items: center;
     display: flex;
-    padding: 20px;
+    box-sizing: border-box;
 }
 section.filters button {
     font-size: 18px;
@@ -21,32 +21,30 @@ section.filters button {
     right: 30px;
     opacity: 1;
     padding: 10px;
+    margin-right: 20px;
     
 
 }
 
-.container .filters button {
-    opacity: 90%;
-    padding: 10px;
-    margin-right: 20px;
-  
-}
 
-.locations .amenities {
+
+.locations, .amenities {
     height: 100%;
     width: 25%;
     display: inline-block;
     position: relative;
+    box-sizing: border-box;
     
 }
 
 .locations {
     border-right: 1px solid #DDDDDD;
-    padding-left: 20px;
     width: 25%;
     height: 100%;
     float: left;
-    padding: 10px;
+    padding-top: 14px;
+    padding-left: 24px;
+    padding-bottom: 5px;
 }
 
 .amenities {
@@ -55,13 +53,20 @@ section.filters button {
     height: 100%;
     width: 25%;
     float: left;
-    padding: 10px;
+    padding-top: 14px;
+    padding-left: 24px;
+    padding-bottom: 5px;
+}
+
+section.filters button:hover {
+    opacity: 90%;
 }
 
 h3 {
     color: black;
     font-weight: 600;
     line-height: 10px;
+    margin:0;
 }
 
 h4 {

@@ -19,7 +19,10 @@ section.filters button {
     right: 30px;
     opacity: 1;
     position: absolute;
-    
+}
+
+section.filters button:hover {
+    opacity: 90%;
 }
 
 .container .filters button {
