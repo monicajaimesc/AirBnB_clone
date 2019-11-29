@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>AirBnB clone</title>
-    <link rel="stylesheet" href="styles/4-common.css">
-    <link rel="stylesheet" href="styles/3-header.css">
-    <link rel="stylesheet" href="styles/3-footer.css">
-    <link rel="stylesheet" href="styles/6-filters.css">
-    <link rel="stylesheet" href="styles/8-places.css">
-    <link rel="icon" href="images/icon.png" type="image/png">
-</head>
-<body>
-<header>
-    <div class="logo">
-    </div>
-</header>
-<div class="container">
-    <section class="filters">
-        <div class="locations">
-            <h3>States</h3>
-            <h4>North Caroline, Washington...</h4>
-            <ul class="popover">
-                <h2>California:</h2>
+    <head>
+        <meta charset="utf-8">
+        <title>AirBnB clone</title>
+        <link rel="stylesheet" href="styles/4-common.css">
+        <link rel="stylesheet" href="styles/3-header.css">
+        <link rel="stylesheet" href="styles/3-footer.css">
+        <link rel="stylesheet" href="styles/6-filters.css">
+        <link rel="stylesheet" href="styles/8-places.css">
+        <link rel="icon" href="images/icon.png" type="image/png">
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+        </header>
+        <div class="container">
+            <section class="filters">
+                 <div class="locations">
+                    <h3>States</h3>
+                    <h4>North Caroline, Washington...</h4>
+                    <ul class="popover">
+                    <h2>California:</h2>
                 <ul>
                     <li>San Francisco</li>
                     <li>Los Altos</li>
@@ -33,116 +32,116 @@
                     <li>Bellevue</li>
                     <li>Redmond</li>
                 </ul>
-            </ul>
-        </div>
-        <div class="amenities">
-            <h3>Amenities</h3>
-            <h4>wifi, parking ...</h4>
-            <ul class="popover">
-                <ul>
+                </ul>
+            </div>
+            <div class="amenities">
+                <h3>Amenities</h3>
+                <h4>wifi, parking ...</h4>
+                <ul class="popover">
                     <li><p>kitchen</p></li>
                     <li><p>Internet</p></li>
                     <li><p>Iron</p></li>
                 </ul>
-            </ul>
+            </div>
+                <button>
+                Search
+                </button>
+            </section>
+            <section class="places">
+                <h1>Places</h1>
+                <article>
+                    <h2>My home</h2>
+                    <div class="price_by_night">
+                        <h3>$80</h3>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <label class="icon"></label>
+                            <p>4 Guests</p>
+                        </div>
+                        <div class="number_rooms">
+                            <label class="icon"></label>
+                            <p>2 Bedrooms</p>
+                        </div>
+                        <div class="number_bathrooms">
+                            <label class="icon"></label>
+                            <p>2 Bathrooms</p>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <p><b>Owner:</b> Maria clapton</p>
+                    </div>
+                    <div class="description">
+                        <p>A cottage made up of stone and timber
+                            built on two storeys, with a large
+                            living room, glass window, a couch for two people and a bathroom with sauna; on the second storey there is a double bedroom. </p>
+                    </div>
+                </article>
+                <article>
+                    <h2>Tiny house</h2>
+                    <div class="price_by_night">
+                        <h3>$64</h3>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <label class="icon"></label>
+                            <p>3 Guests</p>
+                        </div>
+                        <div class="number_rooms">
+                            <label class="icon"></label>
+                            <p>2 Bedrooms</p>
+                        </div>
+                        <div class="number_bathrooms">
+                            <label class="icon"></label>
+                            <p>1 Bathroom</p>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <p><b>Owner:</b> Andrea Parker</p>
+                    </div>
+                    <div class="description">
+                        <p>This is a place for dreamers to reset, reflect, and create.
+                            Designed with a 'slow' pace in mind, our hope is that you enjoy
+                            every part of your stay; from making local coffee by drip in the morning,
+                            choosing the perfect record to put on as the sun sets, or by relaxing in the hot tub
+                            surrounded by over 100 Joshua Trees and a starry night sky.</p>
+                    </div>
+                </article>
+                <article>
+                    <h2>A suit</h2>
+                    <div class="price_by_night">
+                        <h3>$90</h3>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <label class="icon"></label>
+                            <p>3 Guests</p>
+                        </div>
+                        <div class="number_rooms">
+                            <label class="icon"></label>
+                            <p>2 Bedrooms</p>
+                        </div>
+                        <div class="number_bathrooms">
+                            <label class="icon"></label>
+                            <p>1 Bathroom</p>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <p><b>Owner:</b>Clara Piatf</p>
+                    </div>
+                    <div class="description">
+                        <p>Downtown, the best bit of Manhattan. One of, if not the,
+                        LARGEST space on Airbnb in NYC. Your Own PRIVATE Bathroom
+                        & PRIVATE Bedroom, a Terrace off the bedroom, near to subways/buses,
+                        restaurants, bars, real luxury right in the middle of things.</p>
+                    </div>
+                </article>
+            </section>
         </div>
-        <button>
-            Search
-        </button>
-    </section>
-    <section class="places">
-        <h1>Places</h1>
-        <article>
-            <h2>My home</h2>
-            <div class="price_by_night">
-                <h3>$80</h3>
-            </div>
-            <div class="information">
-                <div class="max_guest">
-                </div>
-                <div class="number_rooms">
-                </div>
-                <div class="number_bathrooms">
-                </div>
-            </div>
-            <div class="info-text">
-                <p class="guest-txt">2 Guests</p>
-                <p class="room-txt">1 Bedroom</p>
-                <p class="bath-txt">1 Bathrooms</p>
-            </div>
-            <div class="user">
-                <p><b>Owner:</b> Maria clapton</p>
-            </div>
-            <div class="description">
-                <p>A cottage made up of stone and timber built on two storeys, with a large living room, glass window, a couch for two people and a bathroom with sauna; on the second storey there is a double bedroom. </p>
-            </div>
-        </article>
-        <article>
-        <article>
-            <h2>Tiny house</h2>
-            <div class="price_by_night">
-                <h3>$64</h3>
-            </div>
-            <div class="information">
-                <div class="max_guest">
-                </div>
-
-                <div class="number_rooms">
-                </div>
-                <div class="number_bathrooms">
-                </div>
-            </div>
-            <div class="info-text">
-                <p class="guest-txt">2 Guests</p>
-                <p class="room-txt">1 Bedroom</p>
-                <p class="bath-txt">1 Bathrooms</p>
-            </div>
-            <div class="user">
-                <p><b>Owner:</b> Andrea Parker</p>
-            </div>
-            <div class="description">
-                <p>This is a place for dreamers to reset, reflect, and create.
-                    Designed with a 'slow' pace in mind, our hope is that you enjoy
-                    every part of your stay; from making local coffee by drip in the morning,
-                    choosing the perfect record to put on as the sun sets, or by relaxing in the hot tub
-                    surrounded by over 100 Joshua Trees and a starry night sky.</p>
-            </div>
-        </article>
-        <article>
-            <h2>A suit</h2>
-            <div class="price_by_night">
-                <h3>$90</h3>
-            </div>
-            <div class="information">
-                <div class="max_guest">
-                </div>
-
-                <div class="number_rooms">
-                </div>
-                <div class="number_bathrooms">
-                </div>
-            </div>
-            <div class="info-text">
-                <p class="guest-txt">8 Guests</p>
-                <p class="room-txt">5 Bedroom</p>
-                <p class="bath-txt">3 Bathrooms</p>
-            </div>
-            <div class="user">
-                <p><b>Owner:</b>Clara Piatf</p>
-            </div>
-            <div class="description">
-                <p>Downtown, the best bit of Manhattan. One of, if not the,
-                    LARGEST space on Airbnb in NYC. Your Own PRIVATE Bathroom
-                    & PRIVATE Bedroom, a Terrace off the bedroom, near to subways/buses,
-                    restaurants, bars, real luxury right in the middle of things. </p>
-            </div>
-        </article>
-    </section>
-</div>
-<footer>
-    <p>
-        Holberton School
-    </p>
-</footer>
-</body>
+        <footer>
+            <p>
+                Holberton School
+            </p>
+        </footer>
+    </body>
 </html>
