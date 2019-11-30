@@ -3,8 +3,12 @@ footer {
     background-color: #00FF00;
     height: 60px;
     width: 100%;
-    postion: fixed;
-    bottom: 0;
+    vertical-align: middle;
+    position: absolute;
     text-align: center;
-    line-height: 60px;
+    bottom:0;
+}
+
+footer p {
+    display: inline-block;
 }
