@@ -1,0 +1,18 @@
+#!/bin/bash
+for i in `seq 0 8`
+do
+    touch "$i"-index.html
+    echo "$a<!DOCTYPE html>" >> "$i"-index.html
+    echo "$a<html lang=\"en\">" >> "$i"-index.html
+    echo "$a<head>" >> "$i"-index.html
+    echo "$a<title></title>" >> "$i"-index.html
+    echo "</head>" >> "$i"-index.html
+    echo "<body>" >> "$i"-index.html
+    echo "<header>" >> "$i"-index.html
+    echo "</header>" >> "$i"-index.html
+    echo "<footer>" >> "$i"-index.html
+    echo "<p>Holberton School</p>" >> "$i"-index.html
+    echo "</footer>" >> "$i"-index.html
+    echo "</body>" >> "$i"-index.html
+    echo "</html>" >> "$i"-index.html
+done

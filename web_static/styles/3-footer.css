@@ -1,16 +1,15 @@
-footer {
+#footer {
     background-color: white;
-    border: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
     height: 60px;
     width: 100%;
     bottom: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    
+    justify-content: center;
+    position: relative;
+
 }
 
-footer p {
-    display:inline-block;
-    margin: auto;
-}
+
+

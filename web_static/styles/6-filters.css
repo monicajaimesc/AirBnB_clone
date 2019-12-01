@@ -62,7 +62,6 @@ section.filters button:hover {
 }
 
 h3 {
-    color: black;
     font-weight: 600;
     line-height: 10px;
     margin:0;
@@ -72,10 +71,11 @@ h4 {
     font-weight: 14px;
     font-weight: 400;
     line-break: 10px;
-
+    margin-bottom: 4px;
 }
 
 .popover {
+    display: none;
     background-color: #FAFAFA;
     width: auto;
     border: 1px solid #DDDDDD;
@@ -85,4 +85,12 @@ h4 {
 
 ul {
     list-style: none;
+}
+
+.locations:hover .popover  {
+    display: block;
+}
+
+.amenities:hover .popover  {
+    display: block;
 }
